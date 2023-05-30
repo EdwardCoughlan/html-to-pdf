@@ -22,9 +22,12 @@ export const handler = ApiHandler(async (_evt) => {
 
 
   
-
+    const pdf = await page.pdf();
+    pdf.toString('base64');
   return {
     statusCode: 200,
-    body: `Hello world. The time is ${Time.now()}`,
+    isBase64Encoded: true,
+    headers: { "Content-Type": "application/pdf" },
+    body: pdf.toString('base64'),
   };
 });
