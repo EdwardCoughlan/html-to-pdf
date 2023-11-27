@@ -19,7 +19,7 @@ export function API({ stack }: StackContext) {
   });
   const api = new Api(stack, "api", {
     routes: {
-      "GET /": {
+      "GET /{:path}": {
         function: {
           handler: "packages/functions/src/lambda.handler",
           timeout: 30,
