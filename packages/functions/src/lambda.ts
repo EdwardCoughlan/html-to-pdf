@@ -8,7 +8,7 @@ export const handler = ApiHandler(async (evt) => {
   const path = useQueryParam("path");
 
   const pathToPdf =
-    path || "https://www.letsgetchecked.com/mobile/privacy-policy/";
+    path || "https://www.google.com/";
 
   const chromiumPath = process.env.IS_LOCAL
     ? undefined
