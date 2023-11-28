@@ -31,7 +31,15 @@ export const handler = ApiHandler(async (evt) => {
   console.log("Page Loaded", pageTitle);
 
   
-  const pdf = await page.pdf();
+  const pdf = await page.pdf({
+    margin:{
+      bottom: '10mm',
+      top: '10mm',
+      right: '10mm',
+      left: '10mm',
+    },
+    scale: 2,
+  });
 
   browser.close();
   return {
