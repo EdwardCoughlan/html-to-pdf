@@ -22,6 +22,7 @@ export const handler = ApiHandler(async (evt) => {
     executablePath: chromiumPath,
     headless: chromium.headless,
     ignoreHTTPSErrors: true,
+
   });
 
   console.log("Loading Page");
@@ -38,7 +39,8 @@ export const handler = ApiHandler(async (evt) => {
       right: '10mm',
       left: '10mm',
     },
-    scale: 2,
+    width: '2480px',
+    height: '3508px',
   });
 
   browser.close();
