@@ -31,16 +31,19 @@ export const handler = ApiHandler(async (evt) => {
   const pageTitle = await page.title();
   console.log("Page Loaded", pageTitle);
 
-  
+  await page.emulateMediaType('screen')  
   const pdf = await page.pdf({
     margin:{
-      bottom: '10mm',
-      top: '10mm',
-      right: '10mm',
-      left: '10mm',
+      bottom: '35px',
+      top: '35px',
+      right: '35px',
+      left: '35px',
     },
-    width: '2480px',
-    height: '3508px',
+    format: 'letter',
+    scale:0.8,
+    printBackground: true,
+    // preferCSSPageSize: true,
+
   });
 
   browser.close();
